@@ -28,9 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['shop-assignment.up.railway.app',]
 CSRF_TRUSTED_ORIGINS = ['shop-assignment.up.railway.app',]
-CORS_ORIGIN_WHITELIST = [
-    'shop-assignment.up.railway.app',
-]
+
 
 
 # Application definition
