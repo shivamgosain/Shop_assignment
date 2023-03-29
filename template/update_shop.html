@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container mt-5">
+        <form class="col-6 mx-auto card p-3 shadow-1g" method="post">
+            {% csrf_token %}
+            <h2>Update Shop Details</h2>
+            <hr>
+             <div class="mb-3">
+                <label for="shopname" class="form-label">Shop name</label>
+                <input name="shop_name" value="{{shop.shop_name}}" required type="text" class="form-control">
+             </div>
+             <div class="mb-3">
+                <label for="shop_type" class="form-label">Shop type</label>
+                <input name="shop_type" value="{{shop.shop_type}}" required type="text" class="form-control">
+             </div>
+             <div class="mb-3">
+                <label for="latitude" class="form-label">latitude</label>
+                <input name="latitude" value="{{shop.latitude}}" required type="text" class="form-control">
+             </div>
+             <div class="mb-3">
+                <label for="longitude" class="form-label">longitude</label>
+                <input name="longitude"  value="{{shop.longitude}}" required type="text" class="form-control">
+             </div>
+             <button type="submit" class="btn btn-success">Update Shop</button>
+        </form>
+        
+    </div>
+ </body>
+</html>

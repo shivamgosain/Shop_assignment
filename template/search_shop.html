@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block start %}
+ 
+    <div class="container mt-5">
+        <form class="col-6 mx-auto card p-3 shadow-1g" method="post">
+            {% csrf_token %}
+            <h2>Find Shop Near You</h2>
+            <hr>
+             <div class="mb-3">
+                <label for="user_latitude" class="form-label">latitude</label>
+                <input name="user_latitude" required type="text" class="form-control">
+             </div>
+             <div class="mb-3">
+                <label for="user_longitude" class="form-label">longitude</label>
+                <input name="user_longitude" required type="text" class="form-control">
+             </div>
+             <div class="mb-3">
+                <label for="user_distance" class="form-label">Distance</label>
+                <input name="user_distance" required type="text" class="form-control">
+             </div>
+             <button type="submit" class="btn btn-primary">Find Shop</button>
+             
+        </form>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Shop Name</th>
+                <th scope="col">Shop Type</th>
+                <th scope="col">Latitude</th>
+                <th scope="col">Longitude</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for shop in shops %} 
+                <tr>
+                    
+                    <td>{{shop.shop_name}}</td>
+                    <td>{{shop.shop_type}}</td>
+                    <td>{{shop.latitude}}</td>
+                    <td>{{shop.longitude}} </td>
+                    
+                </tr>
+             {% endfor %}
+            </tbody>
+          </table>
+    </div>
+ </body>
+</html>
+{% endblock %}
